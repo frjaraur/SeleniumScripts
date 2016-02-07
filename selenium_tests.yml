@@ -1,0 +1,27 @@
+SELENIUM_TESTS:
+    # TEST_GOOGLE:
+            # - open http://www.google.es
+            # - set_page_load_timeout 2000
+            # - close
+    # TEST_YAHOO:
+            # - open http://www.yahoo.es
+            # - set_page_load_timeout 2000
+            # - close
+    TEST_PATATA:
+            - open http://www.google.es
+            - find_element_by_name q
+            - send_keys patata
+            - send_submit
+            - find_element_by_tag_name body
+            - find_elements_by_xpath //*[@id="ires"]
+            - close
+    TEST_SELENIUM_DOCS:
+        - open https://selenium.googlecode.com/git/docs/api/py/webdriver/selenium.webdriver.common.keys.html
+        - find_element_by_name q
+        - send_keys find_elements_by_xpath
+        - send_submit
+        - find_element_by_tag_name body
+        - mytest //*[@id="search-results"]
+    # TEST_JOKES:
+        # - open http://www.laughfactory.com/jokes/latest-jokes
+        # - find_elements_by_xpath //div/p[starts-with(@id,'joke_')]
